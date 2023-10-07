@@ -87,7 +87,7 @@ let gamep=new game()
 document.addEventListener('keydown',function(e)
 {
   
-  if(e.key =="q" && p2.health>0 )
+  if(e.key =="q" && p2.health>0  && gamep.isOver == false)
   {
    p1.strike(p1,p2,p1.attackdmg)
     document.getElementById('quickhit').play()
@@ -98,7 +98,7 @@ document.addEventListener('keydown',function(e)
 document.addEventListener('keydown',function(e)
 {
   
-  if(e.key =="p" && p1.health>0 )
+  if(e.key =="p" && p1.health>0 &&gamep.isOver == false )
   {
    p2.strike(p2,p1,p2.attackdmg)
     document.getElementById('quickhit').play()
@@ -133,4 +133,5 @@ reset.onclick =() =>
   p2.health=100
  score1.innerHTML= p1.health
    score2.innerHTML= p2.health
+  gamep.isOver =false
 }
